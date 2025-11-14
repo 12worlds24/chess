@@ -71,9 +71,9 @@ Ana yapılandırma dosyası `backend/config.json` içinde bulunur. Önemli ayarl
   "database": {
     "host": "postgres",
     "port": 5432,
-    "database": "santrac",
-    "username": "santrac_user",
-    "password": "santrac_password",
+    "database": "YOUR_DATABASE_NAME",
+    "username": "YOUR_DATABASE_USER",
+    "password": "YOUR_DATABASE_PASSWORD",
     "connection_timeout": 30
   }
 }
@@ -180,10 +180,10 @@ docker logs santrac_postgres
 
 ```bash
 # PostgreSQL backup
-docker exec santrac_postgres pg_dump -U santrac_user santrac > backup.sql
+docker exec santrac_postgres pg_dump -U YOUR_DATABASE_USER YOUR_DATABASE_NAME > backup.sql
 
 # Restore
-docker exec -i santrac_postgres psql -U santrac_user santrac < backup.sql
+docker exec -i santrac_postgres psql -U YOUR_DATABASE_USER YOUR_DATABASE_NAME < backup.sql
 ```
 
 ### Servisleri Yeniden Başlatma

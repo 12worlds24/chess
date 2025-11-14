@@ -1,0 +1,92 @@
+{
+  "database": {
+    "host": "postgres",
+    "port": 5432,
+    "database": "santrac",
+    "username": "santrac_user",
+    "password": "santrac_password",
+    "connection_timeout": 30,
+    "pool_size": 10,
+    "max_overflow": 20,
+    "pool_timeout": 30,
+    "pool_recycle": 3600,
+    "echo": false
+  },
+  "logging": {
+    "level": "INFO",
+    "file_path": "./logs",
+    "file_name": "santrac.log",
+    "max_file_size_mb": 10,
+    "backup_count": 5,
+    "enable_console": true,
+    "enable_file": true,
+    "enable_windows_event_log": true,
+    "console_colors": true
+  },
+  "retry": {
+    "max_attempts": 3,
+    "initial_delay_seconds": 1,
+    "max_delay_seconds": 60,
+    "exponential_base": 2,
+    "jitter": true
+  },
+  "scheduler": {
+    "enabled": true,
+    "run_on_startup": true,
+    "cron_expression": "0 */6 * * *",
+    "timezone": "Europe/Istanbul"
+  },
+  "smtp": {
+    "enabled": true,
+    "host": "smtp.gmail.com",
+    "port": 587,
+    "use_tls": true,
+    "username": "",
+    "password": "",
+    "from_email": "noreply@santrac.com",
+    "from_name": "Santrac Platform",
+    "to_emails": []
+  },
+  "resources": {
+    "max_threads": 4,
+    "max_cpu_percent": 80,
+    "max_memory_mb": 2048,
+    "cpu_cores": null
+  },
+  "chess_engine": {
+    "stockfish_path": "/usr/bin/stockfish",
+    "skill_level": 10,
+    "depth": 15,
+    "time_limit_ms": 2000
+  },
+  "api": {
+    "host": "0.0.0.0",
+    "port": 8000,
+    "cors_origins": ["http://localhost:3000", "http://localhost:5173"],
+    "rate_limit_per_minute": 60
+  },
+  "recovery": {
+    "database": {
+      "enabled": true,
+      "max_retries": 5,
+      "retry_delay_seconds": 5
+    },
+    "file_system": {
+      "enabled": true,
+      "max_retries": 3,
+      "retry_delay_seconds": 2
+    },
+    "network": {
+      "enabled": true,
+      "max_retries": 5,
+      "retry_delay_seconds": 3
+    }
+  },
+  "metrics": {
+    "enabled": true,
+    "memory_monitoring_interval_seconds": 60,
+    "memory_leak_detection": true,
+    "historical_data_retention_days": 7
+  }
+}
+

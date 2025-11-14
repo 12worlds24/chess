@@ -76,4 +76,9 @@ backend/__pycache__/
 backend/*.pyc
 backend/.env
 backend/logs/
+backend/config.json
+
+# Docker Compose with secrets
+docker-compose.yml
+docker-compose.override.yml
 

@@ -5,15 +5,15 @@ services:
     image: postgres:15-alpine
     container_name: santrac_postgres
     environment:
-      POSTGRES_DB: santrac
+      POSTGRES_DB: santrac_db
       POSTGRES_USER: santrac_user
-      POSTGRES_PASSWORD: santrac_password
+      POSTGRES_PASSWORD: CHANGE_THIS_PASSWORD
     volumes:
       - postgres_data:/var/lib/postgresql/data
     ports:
       - "5432:5432"
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U santrac_user -d santrac"]
+      test: ["CMD-SHELL", "pg_isready -U santrac_user -d santrac_db"]
       interval: 10s
       timeout: 5s
       retries: 5

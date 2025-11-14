@@ -2,9 +2,9 @@
   "database": {
     "host": "postgres",
     "port": 5432,
-    "database": "santrac",
+    "database": "santrac_db",
     "username": "santrac_user",
-    "password": "santrac_password",
+    "password": "CHANGE_THIS_PASSWORD",
     "connection_timeout": 30,
     "pool_size": 10,
     "max_overflow": 20,
@@ -37,15 +37,15 @@
     "timezone": "Europe/Istanbul"
   },
   "smtp": {
-    "enabled": true,
+    "enabled": false,
     "host": "smtp.gmail.com",
     "port": 587,
     "use_tls": true,
-    "username": "",
-    "password": "",
+    "username": "YOUR_EMAIL@gmail.com",
+    "password": "YOUR_APP_PASSWORD",
     "from_email": "noreply@santrac.com",
     "from_name": "Santrac Platform",
-    "to_emails": []
+    "to_emails": ["admin@example.com"]
   },
   "resources": {
     "max_threads": 4,

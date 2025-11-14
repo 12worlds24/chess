@@ -34,10 +34,15 @@ git clone https://github.com/YOUR_USERNAME/Santrac.git
 cd Santrac
 ```
 
-2. Backend config dosyasını düzenleyin (opsiyonel):
+2. Config dosyalarını oluşturun:
 ```bash
-# backend/config.json dosyasını düzenleyin
-# Özellikle database ve SMTP ayarlarını kontrol edin
+# Backend config dosyasını kopyalayın ve düzenleyin
+cp backend/config.json.example backend/config.json
+# backend/config.json dosyasındaki şifreleri değiştirin
+
+# Docker Compose dosyasını kopyalayın ve düzenleyin
+cp docker-compose.yml.example docker-compose.yml
+# docker-compose.yml dosyasındaki POSTGRES_PASSWORD'u değiştirin
 ```
 
 3. Docker Compose ile başlatın:

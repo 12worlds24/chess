@@ -17,35 +17,65 @@ body {
   min-height: 100vh;
 }
 
-/* Chessboard coordinate styling - Enhanced visibility */
-.react-chessboard-coordinates {
+/* Chessboard coordinate styling - Maximum visibility and boldness */
+/* Target all possible coordinate selectors */
+.react-chessboard-coordinates,
+[class*="coordinate"],
+[class*="coords"] {
   font-weight: 900 !important;
-  font-size: 16px !important;
-  font-family: 'Arial Black', 'Arial', sans-serif !important;
-  letter-spacing: 0.5px !important;
+  font-size: 18px !important;
+  font-family: 'Arial Black', 'Impact', 'Arial', sans-serif !important;
+  letter-spacing: 1px !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  text-rendering: optimizeLegibility !important;
 }
 
-.react-chessboard-coordinates.coords-light {
-  color: #1a1a1a !important;
+/* Light squares (dark text on light background) */
+.react-chessboard-coordinates.coords-light,
+[class*="coords-light"],
+[class*="coordinate"][class*="light"] {
+  color: #000000 !important;
   font-weight: 900 !important;
+  font-size: 18px !important;
   text-shadow: 
-    2px 2px 4px rgba(255, 255, 255, 1),
-    0 0 8px rgba(255, 255, 255, 0.8),
-    -1px -1px 2px rgba(255, 255, 255, 1) !important;
-  background: rgba(255, 255, 255, 0.3) !important;
-  padding: 2px 4px !important;
-  border-radius: 3px !important;
+    3px 3px 6px rgba(255, 255, 255, 1),
+    0 0 10px rgba(255, 255, 255, 1),
+    -2px -2px 4px rgba(255, 255, 255, 1),
+    2px -2px 4px rgba(255, 255, 255, 1),
+    -2px 2px 4px rgba(255, 255, 255, 1) !important;
+  background: rgba(255, 255, 255, 0.7) !important;
+  padding: 3px 6px !important;
+  border-radius: 4px !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  font-stretch: condensed !important;
 }
 
-.react-chessboard-coordinates.coords-dark {
+/* Dark squares (white text on dark background) */
+.react-chessboard-coordinates.coords-dark,
+[class*="coords-dark"],
+[class*="coordinate"][class*="dark"] {
   color: #ffffff !important;
   font-weight: 900 !important;
+  font-size: 18px !important;
   text-shadow: 
-    2px 2px 4px rgba(0, 0, 0, 1),
-    0 0 8px rgba(0, 0, 0, 0.9),
-    -1px -1px 2px rgba(0, 0, 0, 1) !important;
-  background: rgba(0, 0, 0, 0.4) !important;
-  padding: 2px 4px !important;
-  border-radius: 3px !important;
+    3px 3px 6px rgba(0, 0, 0, 1),
+    0 0 10px rgba(0, 0, 0, 1),
+    -2px -2px 4px rgba(0, 0, 0, 1),
+    2px -2px 4px rgba(0, 0, 0, 1),
+    -2px 2px 4px rgba(0, 0, 0, 1),
+    0 0 15px rgba(0, 0, 0, 0.8) !important;
+  background: rgba(0, 0, 0, 0.6) !important;
+  padding: 3px 6px !important;
+  border-radius: 4px !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  font-stretch: condensed !important;
+}
+
+/* Additional targeting for nested elements */
+.react-chessboard [class*="coordinate"],
+.react-chessboard [class*="coords"] {
+  font-weight: 900 !important;
+  font-size: 18px !important;
 }
 
